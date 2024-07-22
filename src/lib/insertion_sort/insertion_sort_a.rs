@@ -29,6 +29,7 @@ impl<T:PartialEq+PartialOrd+Copy+Debug> InsertionSort<T>{
             }
             if !i_zero{
                 A[i+1]=key;
+                println!("\t\t{}-{:?},{}",i+2,key,j);
             }
             println!("{A:?}");
         }
