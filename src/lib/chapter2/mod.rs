@@ -1,2 +1,3 @@
 pub mod insertion_sort_a;
-mod merge_sort;
+
+pub mod merge_sort;
