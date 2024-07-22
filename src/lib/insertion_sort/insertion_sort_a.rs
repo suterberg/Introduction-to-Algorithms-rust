@@ -9,15 +9,29 @@ impl InsertionSort<u32>{
     pub fn sort(&mut self){
         let A =&mut self.list;
         println!("{A:?}");
-        for j in 1..A.len(){
-            let key= A[j];
-            let mut i:isize=j as isize-1;
-            while i>=0 && A[i as usize]>key {
-                A[(i+1)as usize]=A[i as usize];
-                i-=1;
-                println!("\t{A:?},{i}");
+        for j in 2..=A.len(){
+            let key= A[j-1];
+            let mut i=j -2;
+            let mut i_zero:bool=false;
+            while A[i]>key {
+                A[i+1]=A[i];
+                if i==0{
+                    println!("\t{A:?},1-{key}");
+                    A[0]=key;
+                    i_zero=true;
+                    break;
+                }else {
+                    println!("\t{A:?},{}-{key}",i+1);
+                    i-=1;
+
+                }
+
+
             }
-            A[(i+1)as usize]=key;
+            if !i_zero{
+                A[i+1]=key;
+            }
+
             println!("{A:?}");
         }
     }
