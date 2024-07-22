@@ -23,15 +23,11 @@ impl InsertionSort<u32>{
                 }else {
                     println!("\t{A:?},{}-{key}",i+1);
                     i-=1;
-
                 }
-
-
             }
             if !i_zero{
                 A[i+1]=key;
             }
-
             println!("{A:?}");
         }
     }
